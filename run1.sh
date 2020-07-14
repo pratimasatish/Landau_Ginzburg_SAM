@@ -1,8 +1,8 @@
 #!/bin/bash --login
 
-templist=$(seq 340.0 5 390.0)
+templist=$(seq 320.0 5 420.0)
 
 for temp in ${templist}
 do
-    echo ${temp} $(./test.o -t ${temp} | grep Average | awk '{print $7}')
+    echo ${temp} $(./do_mc.o -t ${temp} -bc_on 0 | grep Average | awk '{print $7}')
 done
